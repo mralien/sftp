@@ -1,12 +1,12 @@
 # SFTP
 
-![OpenSSH logo](https://raw.githubusercontent.com/dwagelaar/sftp/master/openssh.png "Powered by OpenSSH")
+![OpenSSH logo](https://raw.githubusercontent.com/Corilus/sftp/master/openssh.png "Powered by OpenSSH")
 
 # Supported tags and respective `Dockerfile` links
 
-- [`debian-stretch`, `debian`, `latest` (*Dockerfile*)](https://github.com/dwagelaar/sftp/blob/master/Dockerfile) 
-- [`debian-jessie` (*Dockerfile*)](https://github.com/dwagelaar/sftp/blob/debian-jessie/Dockerfile) 
-- [`alpine` (*Dockerfile*)](https://github.com/dwagelaar/sftp/blob/alpine/Dockerfile) 
+- [`debian-stretch`, `debian`, `latest` (*Dockerfile*)](https://github.com/Corilus/sftp/blob/master/Dockerfile) 
+- [`debian-jessie` (*Dockerfile*)](https://github.com/Corilus/sftp/blob/debian-jessie/Dockerfile) 
+- [`alpine` (*Dockerfile*)](https://github.com/Corilus/sftp/blob/alpine/Dockerfile) 
 
 # Securely share your files
 
