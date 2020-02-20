@@ -1,5 +1,5 @@
 FROM debian:stretch
-MAINTAINER Adrian Dvergsdal [atmoz.net]
+MAINTAINER Dennis Wagelaar [corilus.be]
 
 # Steps done in one RUN layer:
 # - Install packages
