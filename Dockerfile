@@ -10,8 +10,11 @@ RUN echo "@community http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /et
     apk add --no-cache bash shadow@community rsyslog openssh openssh-sftp-server && \
     sed -i 's/GROUP=1000/GROUP=100/' /etc/default/useradd && \
     mkdir -p /var/run/sshd && \
-    rm -f /etc/ssh/ssh_host_*key*
+    rm -f /etc/ssh/ssh_host_*key* && \
+    mkdir -p /etc/rsyslog.d
 
+COPY files/rsyslog.conf /etc/rsyslog.conf
+COPY files/sftplog.conf /etc/rsyslog.d/sftplog.conf
 COPY files/sshd_config /etc/ssh/sshd_config
 COPY files/create-sftp-user /usr/local/bin/
 COPY files/entrypoint /
