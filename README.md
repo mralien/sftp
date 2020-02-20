@@ -36,7 +36,7 @@ This is an automated build linked with the [debian](https://hub.docker.com/_/deb
 ## Simplest docker run example
 
 ```
-docker run -p 22:22 -d atmoz/sftp foo:pass:::upload
+docker run -p 22:22 -d corilus/sftp foo:pass:::upload
 ```
 
 User "foo" with password "pass" can login with sftp and upload files to a folder called "upload". No mounted directories or custom UID/GID. Later you can inspect the files and use `--volumes-from` to mount them somewhere else (or see next example).
@@ -48,7 +48,7 @@ Let's mount a directory and set UID:
 ```
 docker run \
     -v /host/upload:/home/foo/upload \
-    -p 2222:22 -d atmoz/sftp \
+    -p 2222:22 -d corilus/sftp \
     foo:pass:1001
 ```
 
@@ -56,7 +56,7 @@ docker run \
 
 ```
 sftp:
-    image: atmoz/sftp
+    image: corilus/sftp
     volumes:
         - /host/upload:/home/foo/upload
     ports:
@@ -74,7 +74,7 @@ The OpenSSH server runs by default on port 22, and in this example, we are forwa
 docker run \
     -v /host/users.conf:/etc/sftp/users.conf:ro \
     -v mySftpVolume:/home \
-    -p 2222:22 -d atmoz/sftp
+    -p 2222:22 -d corilus/sftp
 ```
 
 /host/users.conf:
@@ -92,7 +92,7 @@ Add `:e` behind password to mark it as encrypted. Use single quotes if using ter
 ```
 docker run \
     -v /host/share:/home/foo/share \
-    -p 2222:22 -d atmoz/sftp \
+    -p 2222:22 -d corilus/sftp \
     'foo:$1$0G2g0GSt$ewU0t6GXG15.0hWoOX8X9.:e:1001'
 ```
 
@@ -108,7 +108,7 @@ docker run \
     -v /host/id_rsa.pub:/home/foo/.ssh/keys/id_rsa.pub:ro \
     -v /host/id_other.pub:/home/foo/.ssh/keys/id_other.pub:ro \
     -v /host/share:/home/foo/share \
-    -p 2222:22 -d atmoz/sftp \
+    -p 2222:22 -d corilus/sftp \
     foo::1001
 ```
 
@@ -121,7 +121,7 @@ docker run \
     -v /host/ssh_host_ed25519_key:/etc/ssh/ssh_host_ed25519_key \
     -v /host/ssh_host_rsa_key:/etc/ssh/ssh_host_rsa_key \
     -v /host/share:/home/foo/share \
-    -p 2222:22 -d atmoz/sftp \
+    -p 2222:22 -d corilus/sftp \
     foo::1001
 ```
 
