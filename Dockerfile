@@ -1,5 +1,5 @@
 FROM debian:jessie
-MAINTAINER Dennis Wagelaar [corilus.be]
+MAINTAINER Artem Kuznetcov
 
 # Steps done in one RUN layer:
 # - Install packages
