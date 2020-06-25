@@ -73,6 +73,9 @@ if [ ! -f "$userConfFinalPath" ]; then
     fi
 fi
 
+# chmod home dir
+chmod 755 /home
+
 # Source custom scripts, if any
 if [ -d /etc/sftp.d ]; then
     for f in /etc/sftp.d/*; do
